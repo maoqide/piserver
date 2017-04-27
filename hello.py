@@ -6,13 +6,9 @@ app = Flask(__name__)
 def hello(name=None):
     return render_template("hello.html", name=name)
 
-@app.route('/ctl', methods=['POST'])
-def control():
-    return 'control the car'
-
 @app.route('/test', methods=['GET','POST'])
 def test():
-    print "----------------------start request------------------------"
+    print "----------------------start request----------------------------------------------------------------------------------------------"
     print "form: ", request.form
     print "args: ", request.args
     print "values: ", request.values
@@ -38,7 +34,8 @@ def test():
     print "routing_exception: ", request.routing_exception
     print "url_rule: ", request.url_rule 
     print "view_args: ", request.view_args
-    print "----------------------end request--------------------------"
+    print "----------------------end request-------------------------------------------------------------------------------------------------"
+    return "test"
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
