@@ -9,7 +9,5 @@ control pi car
 git clone https://github.com/maoqide/piserver.git
 
 cd piserver
-# activate virtualenv
-. venv/bin/activate
-# python server.py
+python server.py
 ```
