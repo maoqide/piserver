@@ -3,29 +3,46 @@
 	<head>
 		<title>Pi Moto</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../static/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body>
-		<div>
-		<button id="forward">forward</button>
-		<button id="backward">backward</button>
-		<button id="left">turn left</button>
-		<button id="right">turn right</button>
-		<button id="stop">stop</button>
+		<div id="ctler" class="contain" style="width: auto; margin: 0 auto; display: table;">
+		<div class="row">
+			<button id="forward" class="btn btn-default btn-lg col-md-4 col-md-offset-4">
+				<span class="glyphicon glyphicon-menu-up"></span>
+			</button>
 		</div>
+		<div class="row">
+			<button id="left" class="btn btn-default btn-lg col-md-4">
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</button>
+			<button id="stop" class="btn btn-default btn-lg col-md-4">
+				<span class="glyphicon glyphicon-unchecked"></span>
+			</button>
+			<button id="right" class="btn btn-default btn-lg col-md-4">
+				<span class="glyphicon glyphicon-menu-right"></span>
+			</button>
+		</div>
+		<div class="row">
+			<button id="backward" class="btn btn-default btn-lg col-md-4 col-md-offset-4">
+				<span class="glyphicon glyphicon-menu-down"></span>
+			</button>
+		</div>
+		</div>
+		
 	</body>
 </html>
 
 <script type="text/javascript" src="../static/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript">
 
+<script type="text/javascript">
 	$(document).ready(function(){
 		$("button").on("click", function(event) {
   			//event.preventDefault();
 			ajaxPost("/ctl", this.id)
 		});
 	});
-
 	function ajaxPost(url,action) {
 		$.ajax({
 			url: url,
@@ -34,5 +51,4 @@
 	  		dataType: "json"
 		});
 	}
-
 </script>
