@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Pi Moto</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	</head>
+	<body>
+		<div>
+		<button>forward</button>
+		<button>backward</button>
+		<button>turn left</button>
+		<button>turn right</button>
+		<button>stop</button>
+		</div>
+	</body>
+</html>
+
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	var request = $.ajax({
+		url: "http://192.168.56.102:18000/",
+  		type: "POST",
+  		data: {"direction" : "forward"},
+  		dataType: "json"
+	});
+ 
+	request.done(function(msg) {
+ 		alert.html(msg);
+	});
+ 
+	request.fail(function(jqXHR, textStatus) {
+  		alert("Request failed: " + textStatus);
+	});
+</script>

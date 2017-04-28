@@ -1,8 +1,7 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect,url_for
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/<name>')
 def index(name=None):
     return render_template("hello.html", name=name)
 
@@ -10,5 +9,10 @@ def index(name=None):
 def control():
     if request.form["direction"] == "forward":
 	    return "car forward"
-    return 'control the car'
+
+    return redirect(url_for('index'))
+
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
 
