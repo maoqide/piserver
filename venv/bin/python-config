@@ -1,4 +1,4 @@
-#!/home/mao/piserver/venc/bin/python
+#!/home/mao/piserver/venv/bin/python
 
 import sys
 import getopt
