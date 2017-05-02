@@ -1,7 +1,7 @@
 # piserver
 control pi car
 
-## it is my first flask app
+## This is my first flask app
 
 ## to start
 ```shell
