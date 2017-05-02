@@ -67,4 +67,9 @@ class Moto():
         GPIO.output(self.out2, 1)
         GPIO.output(self.out3, 0)
         GPIO.output(self.out4, 0)
-        
+
+    def cleanup(self):
+        print "cleanup..."
+        Moto._pa.stop()
+        Moto._pb.stop()
+        GPIO.cleanup()
