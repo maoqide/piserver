@@ -3,6 +3,7 @@ from flask import Flask,render_template,request,redirect,url_for
 import motoctl_pwm
 app = Flask(__name__)
 #moto = motoctl.moto(6, 13, 19, 26)
+# set pin header, (IN1, IN2, IN3, IN4, ENA, ENB)
 moto = motoctl_pwm.Moto(6, 13, 19, 26, 21, 20)
 
 @app.route('/')
