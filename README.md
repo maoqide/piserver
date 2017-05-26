@@ -19,3 +19,6 @@ then you can access control your car on `ip:15000`
 docker run --privileged -d -p 15000:15000 maoqide/pi-motor
 ```
 then you can access control your car on `ip:15000` too.
+
+## [detail about the car](./doc/Pi-Motor.md)
+
