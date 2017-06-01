@@ -35,6 +35,7 @@
 L298N 电机驱动板ENA, ENB, IN1, IN2, IN3, IN4引脚分别接到树莓派GPIO引脚。    
 
 如图所示的引脚接线为：
+
 | L298N | Raspberry Pi |
 | :---: | :----------: |
 | ENA   | GPIO21       |
